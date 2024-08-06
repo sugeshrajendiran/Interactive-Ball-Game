@@ -1,0 +1,69 @@
+package Projects;
+
+import java.awt.*;
+import java.awt.event.*;
+
+class BallGame extends Frame  {
+    int CircleX=200,CircleY=200,CircleR=10;
+    int postX=1240,postY=300;
+
+    BallGame() {
+        addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent w){
+                System.exit(0);
+            }
+        });
+        addMouseMotionListener(new MouseMotionListener() {
+
+            public void mouseDragged(MouseEvent e) {
+
+            }
+
+
+            public void mouseMoved(MouseEvent e) {
+                int X=e.getX();
+                int Y=e.getY();
+                if(X<CircleX+CircleR){
+                    CircleX++;
+                }
+                if(X>CircleX+CircleR){
+                    CircleX--;
+                }
+                if(Y<CircleY+CircleR){
+                    CircleY++;
+                }
+                if(Y>CircleY+CircleR){
+                    CircleY--;
+                }
+                repaint();
+
+            }
+
+
+        });
+        Label label=new Label("--TOUCH ME IF YOU CAN--");
+        label.setBounds(550,50,200,30);
+
+
+        add(label);
+         setSize(500,500);
+         setLayout(null);
+         setTitle("Ball Game");
+         setVisible(true);
+
+    }
+
+    public void paint(Graphics g ) {
+        super.paint(g);
+        g.setColor(Color.BLACK);
+        g.fillOval(CircleX,CircleY,2*CircleR,2*CircleR);
+
+    }
+
+
+    public static void main(String[]  args){
+        new BallGame();
+    }
+
+    }
+
