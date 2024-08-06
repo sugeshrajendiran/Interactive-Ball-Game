@@ -14,7 +14,7 @@ Move your mouse to try and touch the ball!
 
 Usage:
 # Clone this repository
-git clone https://github.com/yourusername/BallGame.git
+git clone https://github.com/sugeshrajendiran/BallGame.git
 
 # Navigate to the project directory
 cd BallGame
